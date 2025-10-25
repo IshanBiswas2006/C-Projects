@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i, j, isPrime, sum = 0;
+
+    printf("Enter the limit: ");
+    scanf("%d", &n);
+
+    for (i = 2; i <= n; i++)
+    {
+        isPrime = 1;
+
+        for (j = 2; j < i; j++)
+        {
+            if (i % j == 0)
+            {
+                isPrime = 0;
+                break;
+            }
+        }
+
+        if (isPrime == 1)
+            sum = sum + i;
+    }
+
+    printf("Sum of prime numbers up to %d is: %d\n", n, sum);
+
+    return 0;
+}
